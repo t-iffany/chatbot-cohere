@@ -1,5 +1,6 @@
 // basic express server
 const express = require('express');
+const { allowedNodeEnvironmentFlags } = require('process');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
@@ -17,4 +18,9 @@ io.on('connection', (socket) => {
 // set up server to listen on port 3000
 http.listen(3000, () => {
   console.log('Server listening on port 3000');
+});
+
+// define route for handling incoming HTTP requests to server
+app.get('/', (req, res) => {
+  res.send('Hello!');
 });
