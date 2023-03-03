@@ -4,6 +4,11 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
+// serve static files from the public directory
+// express.static middleware serves static files relative to the directory
+// that you provide as an argument
+app.use(express.static('public'));
+
 // listen for incoming connections and set up a socket.io connection
 io.on('connection', (socket) => {
   console.log('A user connected');
