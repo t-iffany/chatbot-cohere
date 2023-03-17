@@ -54,10 +54,12 @@ Industry: ${msg}
           },
           data: {
             model: 'xlarge',
-            max_tokens: 20,
+            max_tokens: 100,
+            temperature: 0.9,
             return_likelihoods: 'NONE',
             truncate: 'END',
             prompt: prompt,
+            stop_sequences: ['\n'],
           },
         };
 
