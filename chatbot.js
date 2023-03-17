@@ -22,30 +22,24 @@ function setupChatbot(server, cohere) {
       
       // define prompt for the cohere API, using received chat msg as industry
       const prompt = `
-This program generates a startup idea and name given the industry.
+This program generates a startup idea and name given the industry. For each industry, please provide a startup idea followed by a startup name.
 
 Industry: Workplace
-Startup Idea: A platform that generates slide deck contents automatically based on a given outline
-Startup Name: Deckerize
+Startup Idea: A platform that generates slide deck contents automatically based on a given outline; Startup Name: Deckerize
 --
 Industry: Home Decor
-Startup Idea: An app that calculates the best position of your indoor plants for your apartment
-Startup Name: Planteasy
+Startup Idea: An app that calculates the best position of your indoor plants for your apartment; Startup Name: Planteasy
 --
 Industry: Healthcare
-Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery lasting a whole week
-Startup Name: Hearspan
-
+Startup Idea: A hearing aid for the elderly that automatically adjusts its levels and with a battery lasting a whole week; Startup Name: Hearspan
 --
 Industry: Education
-Startup Idea: An online school that lets students mix and match their own curriculum based on their interests and goals
-Startup Name: Prime Age
-
+Startup Idea: An online school that lets students mix and match their own curriculum based on their interests and goals; Startup Name: Prime Age
 --
 Industry: Productivity
-Startup Idea: A trello clone to track your tasks
-Startup Name: Tasker
-
+Startup Idea: A trello clone to track your tasks; Startup Name: Tasker
+--
+Please generate a startup idea and name for the following industry:
 Industry: ${msg}
       `;
 
