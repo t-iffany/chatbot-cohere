@@ -3,11 +3,16 @@ const express = require('express');
 const http = require('http');
 // require chatbot.js file
 const { setupChatbot } = require('./chatbot');
-// const io = require('socket.io')(http);
+const dotenv = require('dontenv');
+const cohere = require('cohere-ai');
 
 const app = express();
 // const http = require('http').createServer(app);
 const server = http.createServer(app);
+
+// cohere
+dotenv.config();
+cohere.init(process.env.API_KEY);
 
 // set up chatbot by calling function and passing in server obj
 setupChatbot(server);
