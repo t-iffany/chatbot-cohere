@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 // require chatbot.js file
 const { setupChatbot } = require('./chatbot');
-const dotenv = require('dontenv');
+const dotenv = require('dotenv');
 const cohere = require('cohere-ai');
 
 const app = express();
