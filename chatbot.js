@@ -70,7 +70,7 @@ Industry: ${msg}
         
         // extract the generated text from the API response
         const generatedText = response.data.generations[0].text.trim();
-        console.log('generatedText: ', generatedText);
+        // console.log('generatedText: ', generatedText);
 
         // send the generated text to all connected clients
         io.emit('chat message', generatedText);
