@@ -10,12 +10,12 @@ const app = express();
 // const http = require('http').createServer(app);
 const server = http.createServer(app);
 
-// cohere
+// import cohere and instantiate with the API key
 dotenv.config();
 cohere.init(process.env.API_KEY);
 
-// set up chatbot by calling function and passing in server obj
-setupChatbot(server);
+// set up chatbot by calling function and passing in server obj and cohere
+setupChatbot(server, cohere);
 
 // serve static files from the public directory
 // express.static middleware serves static files relative to the directory
